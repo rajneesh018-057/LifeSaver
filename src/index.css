@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-brand-primary: #5054b1;
+  --color-brand-primary-deep: #010047;
+  --color-brand-secondary: #595b81;
+  --color-brand-bg: #fbf8ff;
+  --color-brand-surface-low: #f5f2fb;
+  --color-brand-surface-container: #efecf6;
+  --color-brand-surface-high: #e9e7f0;
+}
+
+/* Custom interactive animations and micro-interactions */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(119, 118, 131, 0.12);
+}
+
+.dark .glass-panel {
+  background: rgba(24, 24, 33, 0.7);
+  border: 1px solid rgba(228, 225, 234, 0.08);
+}
+
+.pulse-glow {
+  box-shadow: 0 0 0 0 rgba(80, 84, 177, 0.4);
+  animation: pulse-glow-ani 2s infinite;
+}
+
+@keyframes pulse-glow-ani {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(80, 84, 177, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(80, 84, 177, 0);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(80, 84, 177, 0);
+  }
+}
+
+/* Custom scrollbar adjustments for a clean SaaS aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 118, 131, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(119, 118, 131, 0.4);
+}
